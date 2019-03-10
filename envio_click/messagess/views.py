@@ -32,7 +32,7 @@ class MessageDecipherView(View):
     def get(self, request, *args, **kwargs):
         message_id = kwargs['pk']
         message = get_object_or_404(Message, pk=message_id)
-        
+
         if ":" not in message.content:
             print('no contiene :')
             return HttpResponseRedirect(reverse('message-detail', args=[message.id]))
@@ -43,4 +43,3 @@ class MessageDecipherView(View):
         return HttpResponseRedirect(reverse('message-detail', args=[message.id]))
 
         """ Se tiene que publicar como un twitter """
-
