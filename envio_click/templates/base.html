@@ -8,41 +8,29 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <title>Messagess</title>
+  <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
 
-<!-- Image and text -->
+<!-- Nav -->
 <nav class="navbar bg-purple shadow">
   <a class="navbar-brand text-white" href="#">
-    Messagess
+    {% block nav %} {% endblock %}
   </a>
+
+  <a class="btn btn-outline-light" href="{% url 'create' %}">Subir archivo xml</a>
 </nav>
 
 
-<section>
-  <div class="container">
-    <div class="row mt-4">
-      <div class="col-12">
-        <div class="card shadow-sm">
-          <div class="card-body">
-              {{ message.content }}
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 mt-2">
-        <a class="btn btn-primary" href="{% url 'decipher' message.id %}">Desencriptar el mensaje</a>
-        <a class="btn twitter-share-button ml-2 text-white"
-          href="https://twitter.com/intent/tweet?text={{ message.content }}"
-          target="_blanck"
-          data-size="large">
-          Tweet</a>
-      </div>
+<!-- Content -->
+<div class="content">
+  <div class="row mt-4">
+    <div class="col-11 mx-auto">
+      {% block content %}{% endblock %}
     </div>
   </div>
-</section>
+</div>
 
 
 

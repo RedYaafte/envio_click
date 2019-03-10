@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('messagess.api_urls')),
     path('messagess/', include('messagess.urls')),
+    path('xml-score/', include('xml_score.urls')),
 ]

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Calcular lineas {% endblock %}
+
+{% block nav %} XML {% endblock %}
+
+{% block content %}
+
+<h2 class="border-bottom">Calcuar número de lineas en documento XML</h2>
+
+<div class="row mt-4">
+  <div class="col">
+    <p><strong>Documento: </strong> {{xmlscore.xml}}</p>
+    <a class="btn btn-primary" href="{% url 'calculated-score' xmlscore.id %}">Calcular</a>
+  </div>
+  <div class="col">
+    {% if xmlscore.score %}
+      <div class="card shadow-sm my-card d-flex justify-content-center align-items-center">
+        <div class="card-body text-center">
+          <small class="text-muted">Número de lineas.</small>
+          <p class="score">{{xmlscore.score}}</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+
+<style>
+.my-card {
+  width: 200px;
+}
+
+.score {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+}
+</style>
+
+
+{% endblock %}
