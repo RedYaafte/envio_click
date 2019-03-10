@@ -14,7 +14,7 @@ Activar entorno virtual y entrar a la carpeta `envio_click`
 
 Instalar `requirements.txt`
 
-`pip install requirements.txt`
+`pip install -r requirements.txt`
 
 Entrar a la `carpeta envio_click` y ejecutar comando `./manage.py runserver` linux o `python manage.py runserver` en windows.
 
